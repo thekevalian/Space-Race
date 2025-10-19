@@ -1,8 +1,8 @@
 extends RigidBody2D
 
-@export var thrust_force: float = 600.0     # How strong the forward thrust is
-@export var rotation_speed: float = 300.0     # How fast the ship rotates (radians/sec)
-@export var max_speed: float = 400.0        # Optional speed cap
+@export var thrust_force: float = 400.0     # How strong the forward thrust is
+@export var rotation_speed: float = 150.0     # How fast the ship rotates (radians/sec)
+@export var max_speed: float = 500.0        # Optional speed cap
 
 @onready var particleMain: CPUParticles2D = $ParticlesMain/CPUParticles2D
 @onready var particleLeft: CPUParticles2D = $ParticlesLeft/CPUParticles2D
