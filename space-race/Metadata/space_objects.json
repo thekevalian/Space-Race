@@ -3,48 +3,62 @@
 		"hell": {
 			"filename": "hell.png",
 			"mass": 1e6,
-			"radius": 40
+			"radius": 80,
+			"num_spawns": 3
 		},
 		"sun": {
 			"filename": "sun.png",
 			"mass": 1e7,
-			"radius": 150
+			"radius": 300,
+			"num_spawns": 1
 		},
 		"moon": {
 			"filename": "moon.png",
 			"mass": 1e5,
-			"radius": 30
+			"radius": 60,
+			"num_spawns": 5
 		},
 		"FloatingIsland1": {
 			"filename": "FloatingIsland1.png",
 			"mass": 5e5,
-			"radius": 20
+			"radius": 40,
+			"num_spawns": 3
 		},
 		"FloatingIsland2": {
 			"filename": "FloatingIsland2.png",
 			"mass": 3e4,
-			"radius": 35
+			"radius": 70,
+			"num_spawns": 3
 		},
 		"FloatingIsland3": {
 			"filename": "FloatingIsland3.png",
 			"mass": 1e5,
-			"radius": 25
+			"radius": 50,
+			"num_spawns": 3
 		},
 		"Donut": {
 			"filename": "Donut.png",
 			"mass": 2e6,
-			"radius": 30
+			"radius": 60,
+			"num_spawns": 3
 		},
 		"Moon2Crescent": {
 			"filename": "Moon2Crescent.png",
 			"mass": 4.5e4,
-			"radius": 10
+			"radius": 20,
+			"num_spawns": 3
+		},
+		"Dynamo": {
+			"filename": "Dynamo.png",
+			"mass": 2e7,
+			"radius": 400,
+			"num_spawns": 1
 		}
 	},
 	"asteroids": {
 		"asteroid0": {
 			"filename": "asteroid0.png",
-			"radius": 6
+			"radius": 18
 		}
 	}
 }

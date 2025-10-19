@@ -1,19 +1,49 @@
-[gd_scene load_steps=2 format=3 uid="uid://dk3d8e16ydopb"]
+[gd_scene load_steps=5 format=3 uid="uid://dk3d8e16ydopb"]
 
 [ext_resource type="Script" uid="uid://c1vuydbfwp64h" path="res://Scripts/StartButton.gd" id="1_ko4ly"]
+[ext_resource type="Texture2D" uid="uid://dh6bic0b5q4i7" path="res://Assets/background.png" id="2_0on6r"]
+[ext_resource type="Texture2D" uid="uid://s0y3ha2o7qp" path="res://Assets/Dynamo.png" id="3_3u666"]
+[ext_resource type="Texture2D" uid="uid://dt2d4ttf0qvg6" path="res://Assets/FloatingIsland1.png" id="4_3u666"]
 
-[node name="Node2D" type="Node2D"]
-position = Vector2(496, 235)
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="."]
 top_level = true
 visibility_layer = 512
 texture_filter = 1
-offset_left = 488.0
-offset_top = 308.0
-offset_right = 578.0
-offset_bottom = 339.0
-scale = Vector2(2, 2)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+theme_override_font_sizes/font_size = 60
 text = "Start the Game"
 script = ExtResource("1_ko4ly")
 metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(-1397, 755)
+texture = ExtResource("2_0on6r")
+
+[node name="Dynamo" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(188, 326)
+scale = Vector2(0.7304148, 0.7894737)
+texture = ExtResource("3_3u666")
+
+[node name="FloatingIsland1" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(977, 328)
+scale = Vector2(0.61104786, 0.69257706)
+texture = ExtResource("4_3u666")

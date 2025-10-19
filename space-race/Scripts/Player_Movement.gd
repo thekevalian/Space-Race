@@ -34,6 +34,7 @@ func _ready() -> void:
 	else:
 		joy_id = joypads[0]
 		use_joypad = true
+		rotation_speed = rotation_speed/4 # Make slow for better control
 		print("Joypad Connected")
 	
 func get_joy_input(joy_axis : int) -> float:
@@ -80,7 +81,8 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		# Forward thrust
 		if Input.is_key_pressed(KEY_W):
 			var forward_dir := Vector2.RIGHT.rotated(rotation)
-			thrust = forward_dir * thrust_force * state.step
+			var multiplier = 3 if Input.is_key_pressed(KEY_D) and Input.is_key_pressed(KEY_A) else 1
+			thrust = forward_dir * thrust_force * state.step * multiplier
 			apply_central_impulse(thrust)
 			particleMain.emitting = true
 			active = true

@@ -18,6 +18,8 @@ func _on_area_entered(area: Area2D) -> void:
 	#explode.play()
 	music.stop()
 	player.dead = true
+	
+	#if area is SpaceObject:
 	await get_tree().create_timer(2.0).timeout
 	show_game_over()
 

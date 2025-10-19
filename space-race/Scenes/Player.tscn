@@ -16,9 +16,6 @@ height = 220.0
 [node name="RigidBody2D" type="RigidBody2D"]
 gravity_scale = 0.0
 script = ExtResource("1_kyqiw")
-thrust_force = null
-rotation_speed = null
-world_bounds = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 2
@@ -57,11 +54,11 @@ emitting = false
 
 [node name="BackroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_52ee3")
-volume_db = -30.0
+volume_db = -15.0
 autoplay = true
 
 [node name="Jets" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_bhhdu")
-volume_db = -20.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
