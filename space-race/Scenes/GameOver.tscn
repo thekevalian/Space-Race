@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bes1jpd3quipp" path="res://Scripts/RestartButton.gd" id="1_m5628"]
 [ext_resource type="Texture2D" uid="uid://s0y3ha2o7qp" path="res://Assets/Dynamo.png" id="2_ktc4i"]
 [ext_resource type="AudioStream" uid="uid://i2loe63ccwlk" path="res://Music/Sounds/large-underwater-explosion-190270.mp3" id="3_uib17"]
-[ext_resource type="Texture2D" uid="uid://dh6bic0b5q4i7" path="res://Assets/background.png" id="4_uib17"]
-[ext_resource type="Texture2D" uid="uid://drsgrmbqkr06b" path="res://Assets/hell.png" id="5_bfgkh"]
+[ext_resource type="Texture2D" uid="uid://bnudsqffqwjcv" path="res://Assets/background.png" id="4_uib17"]
+[ext_resource type="Texture2D" uid="uid://t0axqculeqal" path="res://Assets/hell.png" id="5_bfgkh"]
 [ext_resource type="Texture2D" uid="uid://fid4vly34gup" path="res://Assets/FloatingIsland2.png" id="6_5mu6e"]
 
 [sub_resource type="Curve" id="Curve_uib17"]
@@ -45,7 +45,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(573, 317)
-emitting = false
 amount = 500
 texture = ExtResource("2_ktc4i")
 lifetime = 5.0
@@ -72,6 +71,7 @@ position = Vector2(596, 137)
 scale = Vector2(0.7903226, 0.7163743)
 
 [node name="Background" type="Sprite2D" parent="."]
+show_behind_parent = true
 position = Vector2(2839, 1075)
 texture = ExtResource("4_uib17")
 
