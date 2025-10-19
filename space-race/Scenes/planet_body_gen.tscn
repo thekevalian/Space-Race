@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8mm0c0crvsbg"]
+
+[ext_resource type="Script" uid="uid://cmxpspyb17s33" path="res://Scripts/planet_body_gen.gd" id="1_xiw7d"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_xiw7d")
