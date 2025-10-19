@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cy1ckmsf8atpg"
+path="res://.godot/imported/A.L.I.S.O.N, VIQ, Krosia - TRIFECTA - 02 Rift.mp3-217b56eb622c17a23e7c29254ab8898a.mp3str"
+
+[deps]
+
+source_file="res://Music/A.L.I.S.O.N, VIQ, Krosia - TRIFECTA - 02 Rift.mp3"
+dest_files=["res://.godot/imported/A.L.I.S.O.N, VIQ, Krosia - TRIFECTA - 02 Rift.mp3-217b56eb622c17a23e7c29254ab8898a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

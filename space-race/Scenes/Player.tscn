@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://2h8ff4wg8e3n"]
+[gd_scene load_steps=10 format=3 uid="uid://2h8ff4wg8e3n"]
 
 [ext_resource type="Script" uid="uid://ujpd00tfx6mw" path="res://Scripts/Player_Movement.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://ckoow2a12do48" path="res://Assets/Player.png" id="2_gntrk"]
 [ext_resource type="PackedScene" uid="uid://bocolb7gf1v30" path="res://Scenes/particles.tscn" id="3_gntrk"]
 [ext_resource type="PackedScene" uid="uid://b7csmjs1xqfvk" path="res://Scenes/particlesSide.tscn" id="4_dewec"]
 [ext_resource type="Script" uid="uid://cfp30mhre4wpg" path="res://Scripts/death.gd" id="5_5ixxa"]
+[ext_resource type="PackedScene" uid="uid://bkvoh41omas87" path="res://Scenes/Particle_Explode.tscn" id="6_nn08x"]
+[ext_resource type="AudioStream" uid="uid://cy1ckmsf8atpg" path="res://Music/A.L.I.S.O.N, VIQ, Krosia - TRIFECTA - 02 Rift.mp3" id="7_52ee3"]
+[ext_resource type="AudioStream" uid="uid://da2goi6twm75c" path="res://Music/Sounds/large-rocket-engine-86240.mp3" id="8_bhhdu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dewec"]
 radius = 61.0
@@ -45,3 +48,17 @@ shape = SubResource("CapsuleShape2D_dewec")
 rotation = 1.5707964
 scale = Vector2(0.099999994, 0.099999994)
 shape = SubResource("CapsuleShape2D_dewec")
+
+[node name="ParticleDeath" parent="." instance=ExtResource("6_nn08x")]
+emitting = false
+
+[node name="BackroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_52ee3")
+volume_db = -30.0
+autoplay = true
+
+[node name="Jets" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_bhhdu")
+volume_db = -20.0
+
+[node name="Camera2D" type="Camera2D" parent="."]

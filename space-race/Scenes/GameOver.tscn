@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://dptp3gi2k730q"]
+
+[ext_resource type="Script" uid="uid://bes1jpd3quipp" path="res://Scripts/RestartButton.gd" id="1_m5628"]
+[ext_resource type="PackedScene" uid="uid://bkvoh41omas87" path="res://Scenes/Particle_Explode.tscn" id="2_ktc4i"]
+[ext_resource type="AudioStream" uid="uid://i2loe63ccwlk" path="res://Music/Sounds/large-underwater-explosion-190270.mp3" id="3_uib17"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(496, 235)
+
+[node name="Label" type="Label" parent="."]
+top_level = true
+visibility_layer = 512
+texture_filter = 1
+offset_left = 488.0
+offset_top = 257.0
+offset_right = 575.0
+offset_bottom = 280.0
+scale = Vector2(2, 2)
+text = "Game Over"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+top_level = true
+visibility_layer = 512
+texture_filter = 1
+offset_left = 488.0
+offset_top = 308.0
+offset_right = 578.0
+offset_bottom = 339.0
+scale = Vector2(2, 2)
+text = "Restart"
+script = ExtResource("1_m5628")
+metadata/_edit_use_anchors_ = true
+
+[node name="CPUParticles2D" parent="." instance=ExtResource("2_ktc4i")]
+position = Vector2(81, 72)
+initial_velocity_min = 5.0
+initial_velocity_max = 75.0
+
+[node name="Explode" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_uib17")
+volume_db = -20.0
+autoplay = true

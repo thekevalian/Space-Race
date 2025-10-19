@@ -4,12 +4,14 @@ class_name SpaceObject
 var radius: float
 var exerts_gravity: bool = false
 var sprite: Sprite2D
+#var mass: float = 0.0
 
 func _init(name: String, pos: Vector2, radius: float, exerts_gravity: bool, texture: Texture) -> void:
 	self.name = name
 	self.position = pos
 	self.radius = radius
 	self.exerts_gravity = exerts_gravity
+	#self.mass = mass
 	
 	# Sprite
 	sprite = Sprite2D.new()

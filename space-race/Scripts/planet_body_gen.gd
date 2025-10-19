@@ -1,12 +1,15 @@
 extends Node2D
 
-const MAX_DISPLAY_DISTANCE = 640.0  # pixels between furthest points
+const MAX_DISPLAY_DISTANCE = 1000.0  # pixels between furthest points
 const ASTEROID_MAX_VELOCITY = 40.0
 const ASTEROID_MAX_ROTATIONAL_VELOCITY = 2
 
 var space_object_arr = []
 var asteroid_textures = {}
 var NUM_ASTEROIDS = 20
+
+@onready var player: RigidBody2D = $RigidBody2D
+const g = 0.20
 
 func _ready():
 	load_barycenters()
@@ -30,7 +33,7 @@ func load_barycenters():
 		if texture == null:
 			print("Failed to load texture for:", texture_filepath)
 
-		var planet_obj = Planet.new(name, pos, radius, texture, mass)
+		var planet_obj = Planet.new(planet, pos, radius, true, texture, mass)
 		add_child(planet_obj)
 		space_object_arr.append(planet_obj)
 	
@@ -58,4 +61,15 @@ func load_barycenters():
 			
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if not player:
+		return
+	
+	for obj in space_object_arr:
+		if obj == null or not is_instance_valid(obj):
+			continue
+		if obj.exerts_gravity:
+			var direction = obj.global_position - player.global_position
+			var distance_squared = max(direction.length_squared(), 10.0)  # prevent divide-by-zero
+			var force_magnitude = g * obj.mass * player.mass / distance_squared
+			var force = direction.normalized() * force_magnitude
+			player.apply_central_force(force)

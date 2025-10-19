@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8mm0c0crvsbg"]
+
+[ext_resource type="Script" uid="uid://cmxpspyb17s33" path="res://Scripts/planet_body_gen.gd" id="1_xiw7d"]
+[ext_resource type="PackedScene" uid="uid://2h8ff4wg8e3n" path="res://Scenes/Player.tscn" id="2_txtl6"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_xiw7d")
+
+[node name="RigidBody2D" parent="." instance=ExtResource("2_txtl6")]
+position = Vector2(3, -2)

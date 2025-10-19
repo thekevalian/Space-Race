@@ -8,7 +8,3 @@ script = ExtResource("1_xiw7d")
 
 [node name="RigidBody2D" parent="." instance=ExtResource("2_txtl6")]
 position = Vector2(3, -2)
-
-[node name="Camera2D" type="Camera2D" parent="RigidBody2D"]
-position = Vector2(-3, 2)
-zoom = Vector2(2, 2)

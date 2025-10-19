@@ -4,10 +4,12 @@ class_name Planet
 
 var gravity_constant: float = 6.67430e-11  # Gravitational constant
 
+var mass: float = 0.0
+
 # Constructor
-func _init(name: String, pos: Vector2, radius: float, texture: Texture, mass : float) -> void:
+func _init(name: String, pos: Vector2, radius: float, exerts_gravity: bool, texture: Texture, mass_value : float) -> void:
 	super(name, pos, radius, true, texture)
-	mass = mass
+	mass = mass_value
 
 # Gravity calculation (this is just a placeholder for the formula)
 func calculate_gravity(other_object: SpaceObject) -> float:
