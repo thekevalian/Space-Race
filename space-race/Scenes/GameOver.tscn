@@ -1,42 +1,87 @@
-[gd_scene load_steps=4 format=3 uid="uid://dptp3gi2k730q"]
+[gd_scene load_steps=9 format=3 uid="uid://dptp3gi2k730q"]
 
 [ext_resource type="Script" uid="uid://bes1jpd3quipp" path="res://Scripts/RestartButton.gd" id="1_m5628"]
-[ext_resource type="PackedScene" uid="uid://bkvoh41omas87" path="res://Scenes/Particle_Explode.tscn" id="2_ktc4i"]
+[ext_resource type="Texture2D" uid="uid://s0y3ha2o7qp" path="res://Assets/Dynamo.png" id="2_ktc4i"]
 [ext_resource type="AudioStream" uid="uid://i2loe63ccwlk" path="res://Music/Sounds/large-underwater-explosion-190270.mp3" id="3_uib17"]
+[ext_resource type="Texture2D" uid="uid://dh6bic0b5q4i7" path="res://Assets/background.png" id="4_uib17"]
+[ext_resource type="Texture2D" uid="uid://drsgrmbqkr06b" path="res://Assets/hell.png" id="5_bfgkh"]
+[ext_resource type="Texture2D" uid="uid://fid4vly34gup" path="res://Assets/FloatingIsland2.png" id="6_5mu6e"]
 
-[node name="Node2D" type="Node2D"]
-position = Vector2(496, 235)
+[sub_resource type="Curve" id="Curve_uib17"]
+_data = [Vector2(0, 1), 0.0, -0.48314595, 0, 0, Vector2(1, 0), -3.7443879, 0.0, 0, 0]
+point_count = 2
 
-[node name="Label" type="Label" parent="."]
-top_level = true
-visibility_layer = 512
-texture_filter = 1
-offset_left = 488.0
-offset_top = 257.0
-offset_right = 575.0
-offset_bottom = 280.0
-scale = Vector2(2, 2)
-text = "Game Over"
-metadata/_edit_use_anchors_ = true
+[sub_resource type="Gradient" id="Gradient_rdiyk"]
+offsets = PackedFloat32Array(0, 0.47260273, 1)
+colors = PackedColorArray(1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1)
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="."]
 top_level = true
 visibility_layer = 512
 texture_filter = 1
-offset_left = 488.0
-offset_top = 308.0
-offset_right = 578.0
-offset_bottom = 339.0
-scale = Vector2(2, 2)
-text = "Restart"
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+theme_override_font_sizes/font_size = 60
+text = "Game Over
+Restart?"
 script = ExtResource("1_m5628")
 metadata/_edit_use_anchors_ = true
 
-[node name="CPUParticles2D" parent="." instance=ExtResource("2_ktc4i")]
-position = Vector2(81, 72)
-initial_velocity_min = 5.0
-initial_velocity_max = 75.0
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(573, 317)
+emitting = false
+amount = 500
+texture = ExtResource("2_ktc4i")
+lifetime = 5.0
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 300.0
+angular_velocity_min = 200.0
+angular_velocity_max = 500.0
+scale_amount_min = 0.05
+scale_amount_max = 0.1
+scale_amount_curve = SubResource("Curve_uib17")
+color_ramp = SubResource("Gradient_rdiyk")
 
 [node name="Explode" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_uib17")
 autoplay = true
+
+[node name="GuyWhoKilledMe" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(596, 137)
+scale = Vector2(0.7903226, 0.7163743)
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(2839, 1075)
+texture = ExtResource("4_uib17")
+
+[node name="Hell" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(159, 343)
+texture = ExtResource("5_bfgkh")
+
+[node name="FloatingIsland2" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(966, 327.99994)
+scale = Vector2(0.79840547, 0.7882883)
+texture = ExtResource("6_5mu6e")
