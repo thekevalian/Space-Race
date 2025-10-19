@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://bocolb7gf1v30"]
+
+[sub_resource type="Curve" id="Curve_7pyg6"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.9448324, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_fv5ml"]
+offsets = PackedFloat32Array(0, 0.42465752, 0.88584477)
+colors = PackedColorArray(1, 1, 0.078431375, 1, 0.9379801, 0.0003303454, 0.00018135666, 1, 0.17847097, 2.2185267e-07, 3.6098065e-08, 1)
+
+[node name="Particles" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 750
+lifetime = 1.2
+speed_scale = 2.5
+lifetime_randomness = 0.2
+emission_shape = 3
+emission_rect_extents = Vector2(12, 2)
+direction = Vector2(0, 90)
+spread = 40.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 60.0
+scale_amount_min = 0.5
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_7pyg6")
+color_ramp = SubResource("Gradient_fv5ml")
