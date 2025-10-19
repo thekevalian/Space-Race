@@ -3,23 +3,23 @@
         "hell": {
             "filename": "hell.png",
             "mass": 1e4,
-            "radius": 25
+            "radius": 40
         },
         "sun": {
             "filename": "sun.png",
             "mass": 1e8,
-            "radius": 100
+            "radius": 150
         },
         "moon": {
             "filename": "moon.png",
             "mass": 1e3,
-            "radius": 10
+            "radius": 30
         }
     },
     "asteroids": {
         "asteroid0": {
             "filename": "asteroid0.png",
-            "radius": 5
+            "radius": 6
         }
     }
 }

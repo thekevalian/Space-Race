@@ -42,6 +42,5 @@ func _ready():
 
 func _on_area_entered(area: Area2D) -> void:
 	if self is Planet and area is Asteroid:
-		print("Destroyed an Asteroid")
 		area.queue_free()
 	
