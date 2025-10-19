@@ -39,5 +39,4 @@ initial_velocity_max = 75.0
 
 [node name="Explode" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_uib17")
-volume_db = -20.0
 autoplay = true
