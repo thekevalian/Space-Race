@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dk3d8e16ydopb"]
 
 [ext_resource type="Script" uid="uid://c1vuydbfwp64h" path="res://Scripts/StartButton.gd" id="1_ko4ly"]
-[ext_resource type="Texture2D" uid="uid://dh6bic0b5q4i7" path="res://Assets/background.png" id="2_0on6r"]
+[ext_resource type="Texture2D" uid="uid://bnudsqffqwjcv" path="res://Assets/background.png" id="2_0on6r"]
 [ext_resource type="Texture2D" uid="uid://s0y3ha2o7qp" path="res://Assets/Dynamo.png" id="3_3u666"]
 [ext_resource type="Texture2D" uid="uid://dt2d4ttf0qvg6" path="res://Assets/FloatingIsland1.png" id="4_3u666"]
 
