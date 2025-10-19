@@ -10,6 +10,9 @@ var NUM_ASTEROIDS = 20
 
 @onready var player: RigidBody2D = $RigidBody2D
 const g = 0.20
+const MIN_PLAYER_DISTANCE = 300.0  # Prevents spawning too close to player
+const MIN_PLANET_SPACING = 150.0   # Prevents overlapping between planets
+const MAX_ATTEMPTS = 50            # Prevent infinite loops when placing
 
 func _ready():
 	load_barycenters()
@@ -24,18 +27,49 @@ func load_barycenters():
 	# All planets can only be generated once
 	randomize()
 	for planet in space_objects["planets"].keys():
-		var pos = Vector2(randf_range(-MAX_DISPLAY_DISTANCE, MAX_DISPLAY_DISTANCE), 
-						  randf_range(-MAX_DISPLAY_DISTANCE, MAX_DISPLAY_DISTANCE))
-		var radius = space_objects["planets"][planet]["radius"]
-		var mass = space_objects["planets"][planet]["mass"]
-		var texture_filepath = "res://Assets/" + space_objects["planets"][planet]["filename"]
-		var texture = load(texture_filepath)
-		if texture == null:
-			print("Failed to load texture for:", texture_filepath)
+		var placed = false
+		var attempts = 0
+		
+		while not placed and attempts < MAX_ATTEMPTS:
+			attempts += 1
 
-		var planet_obj = Planet.new(planet, pos, radius, true, texture, mass)
-		add_child(planet_obj)
-		space_object_arr.append(planet_obj)
+			var pos = Vector2(
+				randf_range(-MAX_DISPLAY_DISTANCE, MAX_DISPLAY_DISTANCE),
+				randf_range(-MAX_DISPLAY_DISTANCE, MAX_DISPLAY_DISTANCE)
+			)
+
+			var radius = space_objects["planets"][planet]["radius"]
+			var mass = space_objects["planets"][planet]["mass"]
+			var texture_filepath = "res://Assets/" + space_objects["planets"][planet]["filename"]
+			var texture = load(texture_filepath)
+			if texture == null:
+				print("Failed to load texture for:", texture_filepath)
+				break
+
+			# Check distance from player
+			if pos.distance_to(Vector2.ZERO) < MIN_PLAYER_DISTANCE + radius:
+				continue
+
+			# Check distance from other planets
+			var too_close = false
+			for other in space_object_arr:
+				if other.exerts_gravity:
+					var min_distance = radius + other.radius + MIN_PLANET_SPACING
+					if pos.distance_to(other.global_position) < min_distance:
+						too_close = true
+						break
+			
+			if too_close:
+				continue
+
+			# Passed all checks, place the planet
+			var planet_obj = Planet.new(planet, pos, radius, true, texture, mass)
+			add_child(planet_obj)
+			space_object_arr.append(planet_obj)
+			placed = true
+
+		if not placed:
+			print("Failed to place planet:", planet, "after", MAX_ATTEMPTS, "attempts")
 	
 	# Load Asteroid Textures
 	for asteroid in space_objects["asteroids"].keys():
@@ -69,7 +103,7 @@ func _process(delta: float) -> void:
 			continue
 		if obj.exerts_gravity:
 			var direction = obj.global_position - player.global_position
-			var distance_squared = max(direction.length_squared(), 10.0)  # prevent divide-by-zero
+			var distance_squared = max(direction.length_squared(), 4.0)  # prevent divide-by-zero
 			var force_magnitude = g * obj.mass * player.mass / distance_squared
 			var force = direction.normalized() * force_magnitude
 			player.apply_central_force(force)

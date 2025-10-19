@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://2h8ff4wg8e3n"]
 
 [ext_resource type="Script" uid="uid://ujpd00tfx6mw" path="res://Scripts/Player_Movement.gd" id="1_kyqiw"]
-[ext_resource type="Texture2D" uid="uid://ckoow2a12do48" path="res://Assets/Player.png" id="2_gntrk"]
+[ext_resource type="Texture2D" uid="uid://cnacfvhvjds8g" path="res://Assets/Player.png" id="2_gntrk"]
 [ext_resource type="PackedScene" uid="uid://bocolb7gf1v30" path="res://Scenes/particles.tscn" id="3_gntrk"]
 [ext_resource type="PackedScene" uid="uid://b7csmjs1xqfvk" path="res://Scenes/particlesSide.tscn" id="4_dewec"]
 [ext_resource type="Script" uid="uid://cfp30mhre4wpg" path="res://Scripts/death.gd" id="5_5ixxa"]
@@ -16,6 +16,9 @@ height = 220.0
 [node name="RigidBody2D" type="RigidBody2D"]
 gravity_scale = 0.0
 script = ExtResource("1_kyqiw")
+thrust_force = null
+rotation_speed = null
+world_bounds = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 2

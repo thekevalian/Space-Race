@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dk3d8e16ydopb"]
+
+[ext_resource type="Script" uid="uid://c1vuydbfwp64h" path="res://Scripts/StartButton.gd" id="1_ko4ly"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(496, 235)
+
+[node name="Button" type="Button" parent="."]
+top_level = true
+visibility_layer = 512
+texture_filter = 1
+offset_left = 488.0
+offset_top = 308.0
+offset_right = 578.0
+offset_bottom = 339.0
+scale = Vector2(2, 2)
+text = "Start the Game"
+script = ExtResource("1_ko4ly")
+metadata/_edit_use_anchors_ = true

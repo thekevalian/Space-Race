@@ -17,27 +17,27 @@
 		},
 		"FloatingIsland1": {
 			"filename": "FloatingIsland1.png",
-			"mass": 1e4,
-			"radius": 25
+			"mass": 5e5,
+			"radius": 20
 		},
 		"FloatingIsland2": {
 			"filename": "FloatingIsland2.png",
-			"mass": 1e4,
-			"radius": 25
+			"mass": 3e4,
+			"radius": 35
 		},
 		"FloatingIsland3": {
 			"filename": "FloatingIsland3.png",
-			"mass": 1e4,
+			"mass": 1e5,
 			"radius": 25
 		},
 		"Donut": {
 			"filename": "Donut.png",
-			"mass": 1e4,
-			"radius": 25
+			"mass": 2e6,
+			"radius": 30
 		},
 		"Moon2Crescent": {
 			"filename": "Moon2Crescent.png",
-			"mass": 1e3,
+			"mass": 4.5e4,
 			"radius": 10
 		}
 	},

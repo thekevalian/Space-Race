@@ -8,3 +8,6 @@ script = ExtResource("1_xiw7d")
 
 [node name="RigidBody2D" parent="." instance=ExtResource("2_txtl6")]
 position = Vector2(3, -2)
+thrust_force = 80.0
+rotation_speed = 8.0
+world_bounds = Rect2(-1000, -1000, 2000, 2000)
