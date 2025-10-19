@@ -1,0 +1,25 @@
+{
+    "planets": {
+        "hell": {
+            "filename": "hell.png",
+            "mass": 1e4,
+            "radius": 25
+        },
+        "sun": {
+            "filename": "sun.png",
+            "mass": 1e8,
+            "radius": 100
+        },
+        "moon": {
+            "filename": "moon.png",
+            "mass": 1e3,
+            "radius": 10
+        }
+    },
+    "asteroids": {
+        "asteroid0": {
+            "filename": "asteroid0.png",
+            "radius": 5
+        }
+    }
+}
